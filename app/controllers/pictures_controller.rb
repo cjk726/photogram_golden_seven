@@ -28,6 +28,14 @@ class PicturesController < ApplicationController
       
       
       def create_row
+          # The Parameters: {"the_source"=>"hi", "the_caption"=>"there"}
+        
+        p = Photo.new
+        p.source = params["the_source"]
+        p.caption = params["the_caption"]
+        p.save
+
+        @pic_count = Photo.count
 
         render("create_row.html.erb")
       end
