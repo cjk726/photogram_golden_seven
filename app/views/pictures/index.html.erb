@@ -9,6 +9,9 @@
 
   <img src="<%= the_photo.source %>">
     <div>
+      <a href="/photos/<%= the_photo.id %>/edit">Edit</a>
+    </div>
+    <div>
       <a href="/delete_photo/<%= the_photo.id %>">Delete</a>
     </div>
   <% end %>
