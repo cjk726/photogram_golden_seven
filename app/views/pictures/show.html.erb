@@ -1,7 +1,25 @@
 <h1>Photo Details</h1>
 
-<img src="<%= @pic.source %>">
-
 <p>
  <%= @pic.caption %>
 </p>
+
+<img src="<%= @pic.source %>">
+
+<p>
+    Posted at <%= @pic.created_at %>
+    <br>
+    Current time is <%= @datetime_now %>
+</p>
+
+<a href="/photos">
+    <button>Go back</button>
+</a>
+
+<a href="/photos/<%= @pic.id %>/edit">
+    <button>Edit</button>
+</a>
+
+<a href="/delete_photo/<%= @pic.id %>">
+    <button>Delete</button>
+</a>

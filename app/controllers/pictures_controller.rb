@@ -1,15 +1,9 @@
 class PicturesController < ApplicationController
 
       def show
-        # Here are the Parameters: {"an_id" =>"5"}
-        
-        # the_id_number = params["an_id"]
-        # pic = Photo.find(the_id_number).source
-        
-        # @the_source = pic.source
-        # @the_caption = pic.caption     # could just be     
         
         @pic = Photo.find(params["the_id"])
+        @datetime_now = DateTime.now #- @pic.created_at
         
         render("show.html.erb")
       end
