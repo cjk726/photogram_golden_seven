@@ -58,7 +58,6 @@ class PicturesController < ApplicationController
         @pic.save
         @id = @pic.id
     
-      #  redirect_to("photos/"+p.id)
         render("show.html.erb")
       end
 
@@ -67,7 +66,7 @@ class PicturesController < ApplicationController
         toast_pic = Photo.find(params["toast_id"])
         toast_pic.destroy
         
-          redirect_to("/photos/")
+          redirect_to("/photos")
        #  render("destroy_row.html.erb")
       end
 
