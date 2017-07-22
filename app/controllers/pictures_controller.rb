@@ -58,7 +58,9 @@ class PicturesController < ApplicationController
         @pic.save
         @id = @pic.id
     
-        render("show.html.erb")
+       redirect_to("/photos/"+@id.to_s)
+    
+       # render("show.html.erb")
       end
 
 
