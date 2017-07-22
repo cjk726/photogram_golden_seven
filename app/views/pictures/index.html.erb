@@ -8,6 +8,8 @@
   <% @pics.each do |the_photo| %>
 
   <img src="<%= the_photo.source %>">
-
+    <div>
+      <a href="/delete_photo/<%= the_photo.id %>">Delete</a>
+    </div>
   <% end %>
 </div>
