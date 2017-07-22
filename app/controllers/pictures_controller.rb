@@ -37,7 +37,8 @@ class PicturesController < ApplicationController
 
         @pic_count = Photo.count
 
-        render("create_row.html.erb")
+        redirect_to("/photos")
+      # render("create_row.html.erb")
       end
 
 
@@ -51,13 +52,14 @@ class PicturesController < ApplicationController
 
       def update_row
     
-        p = Photo.find(params["some_id"])
-        p.source = params["the_source"]
-        p.caption = params["the_caption"]
-        p.save
-        @id = p.id
+        @pic = Photo.find(params["some_id"])
+        @pic.source = params["the_source"]
+        @pic.caption = params["the_caption"]
+        @pic.save
+        @id = @pic.id
     
-        render("update_row.html.erb")
+      #  redirect_to("photos/"+p.id)
+        render("show.html.erb")
       end
 
 
@@ -65,7 +67,7 @@ class PicturesController < ApplicationController
         toast_pic = Photo.find(params["toast_id"])
         toast_pic.destroy
         
-          redirect_to("/photos")
+          redirect_to("/photos/")
        #  render("destroy_row.html.erb")
       end
 
