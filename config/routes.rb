@@ -8,12 +8,7 @@ Rails.application.routes.draw do
   # READ
   get("/", { :controller => "pictures", :action => "index" })
   get("/photos", { :controller => "pictures", :action => "index" })
-  
-  
-  
   get("/photos/:the_id", { :controller => "pictures", :action => "show" })
-
-
 
   # UPDATE
   get("/photos/:an_id/edit", { :controller => "pictures", :action => "edit_form" })
