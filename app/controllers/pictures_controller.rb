@@ -3,16 +3,22 @@ class PicturesController < ApplicationController
       def show
         
         @pic = Photo.find(params["the_id"])
-        @datetime_now = DateTime.now #- @pic.created_at
+        @datetime_now = DateTime.now # - @pic.created_at
         
         render("show.html.erb")
       end
       
       
+      
+      
       def index
+          
+        @pics = Photo.all
 
         render("index.html.erb")
       end
+      
+      
       
       
       def new_form

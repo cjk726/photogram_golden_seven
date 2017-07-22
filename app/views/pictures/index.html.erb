@@ -3,3 +3,11 @@
 <a href="/photos/new">
     Add a new photo
 </a>
+
+<div>
+  <% @pics.each do |the_photo| %>
+
+  <img src="<%= the_photo.source %>">
+
+  <% end %>
+</div>
